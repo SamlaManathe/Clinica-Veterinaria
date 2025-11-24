@@ -1,0 +1,30 @@
+# Node.js / TypeScript
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+
+# Environment
+.env
+
+# Prisma
+node_modules/.prisma
+/src/generated/prisma
+#prisma/migrations/
+
+# Docker
+db-data/
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs e temp
+*.log
+*.tmp
+.env

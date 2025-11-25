@@ -63,7 +63,7 @@ function Login() {
 
       const dadosSecretario = response.data;
 
-      setMsgSucesso(`Bem vindo(a), ${dadosSecretario.nome}!`);
+      setMsgSucesso(`Bem vindo(a), ${dadosSecretario.secretario.nome}!`);
       setMsgErro("");
 
       setTimeout(() => {

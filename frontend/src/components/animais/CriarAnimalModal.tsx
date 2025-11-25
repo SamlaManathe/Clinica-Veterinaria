@@ -88,7 +88,8 @@ const CriarAnimalModal = ({ open, onClose, onSuccess }: CriarAnimalModalProps) =
           <TextField fullWidth label="Raça" name="raca" value={formData.raca} onChange={handleInputChange} error={!!errors.raca} helperText={errors.raca} />
           <TextField fullWidth label="Sexo" name="sexo" value={formData.sexo} onChange={handleInputChange} error={!!errors.sexo} helperText={errors.sexo} />
           <TextField fullWidth label="Idade" name="idade" type="number" value={formData.idade} onChange={handleInputChange} error={!!errors.idade} helperText={errors.idade} />
-          <TextField fullWidth label="Data de Nascimento" name="dataNascimento" value={formData.dataNascimento} onChange={handleInputChange} placeholder="YYYY-MM-DD" error={!!errors.dataNascimento} helperText={errors.dataNascimento} />
+         <TextField fullWidth name="dataNascimento" type="date" value={formData.dataNascimento} onChange={handleInputChange} error={!!errors.dataNascimento} helperText={errors.dataNascimento} InputLabelProps={{ shrink: true }} />
+
           <TextField fullWidth label="Peso (kg)" name="peso" type="number" value={formData.peso} onChange={handleInputChange} error={!!errors.peso} helperText={errors.peso} />
           <TextField fullWidth label="Responsável" name="responsavelNome" value={formData.responsavelNome} onChange={handleInputChange} required error={!!errors.responsavelNome} helperText={errors.responsavelNome} />
           <TextField fullWidth label="Email do Responsável" name="responsavelEmail" value={formData.responsavelEmail} onChange={handleInputChange} error={!!errors.responsavelEmail} helperText={errors.responsavelEmail} />

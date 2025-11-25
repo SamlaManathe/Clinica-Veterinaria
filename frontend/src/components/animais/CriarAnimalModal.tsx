@@ -25,9 +25,9 @@ const CriarAnimalModal = ({ open, onClose, onSuccess }: CriarAnimalModalProps) =
     especie: "",
     raca: "",
     sexo: "",
-    idade: "",
+    idade: undefined as number | undefined,
     dataNascimento: "",
-    peso: "",
+    peso: undefined as number | undefined,
     responsavelNome: "",
     responsavelEmail: "",
     responsavelTelefone: "",
@@ -87,10 +87,37 @@ const CriarAnimalModal = ({ open, onClose, onSuccess }: CriarAnimalModalProps) =
           <TextField fullWidth label="Espécie" name="especie" value={formData.especie} onChange={handleInputChange} required error={!!errors.especie} helperText={errors.especie} />
           <TextField fullWidth label="Raça" name="raca" value={formData.raca} onChange={handleInputChange} error={!!errors.raca} helperText={errors.raca} />
           <TextField fullWidth label="Sexo" name="sexo" value={formData.sexo} onChange={handleInputChange} error={!!errors.sexo} helperText={errors.sexo} />
-          <TextField fullWidth label="Idade" name="idade" type="number" value={formData.idade} onChange={handleInputChange} error={!!errors.idade} helperText={errors.idade} />
-         <TextField fullWidth name="dataNascimento" type="date" value={formData.dataNascimento} onChange={handleInputChange} error={!!errors.dataNascimento} helperText={errors.dataNascimento} InputLabelProps={{ shrink: true }} />
-
-          <TextField fullWidth label="Peso (kg)" name="peso" type="number" value={formData.peso} onChange={handleInputChange} error={!!errors.peso} helperText={errors.peso} />
+          <TextField
+            fullWidth
+            label="Idade"
+            name="idade"
+            type="number"
+            value={formData.idade ?? ""}
+            onChange={(e) =>
+              setFormData((prev: any) => ({
+                ...prev,
+                idade: e.target.value === "" ? undefined : Number(e.target.value),
+              }))
+            }
+            error={!!errors.idade}
+            helperText={errors.idade}
+          />
+          <TextField fullWidth name="dataNascimento" type="date" value={formData.dataNascimento} onChange={handleInputChange} error={!!errors.dataNascimento} helperText={errors.dataNascimento} InputLabelProps={{ shrink: true }} />
+          <TextField
+            fullWidth
+            label="Peso (kg)"
+            name="peso"
+            type="number"
+            value={formData.peso ?? ""}
+            onChange={(e) =>
+              setFormData((prev: any) => ({
+                ...prev,
+                peso: e.target.value === "" ? undefined : Number(e.target.value),
+              }))
+            }
+            error={!!errors.peso}
+            helperText={errors.peso}
+          />
           <TextField fullWidth label="Responsável" name="responsavelNome" value={formData.responsavelNome} onChange={handleInputChange} required error={!!errors.responsavelNome} helperText={errors.responsavelNome} />
           <TextField fullWidth label="Email do Responsável" name="responsavelEmail" value={formData.responsavelEmail} onChange={handleInputChange} error={!!errors.responsavelEmail} helperText={errors.responsavelEmail} />
           <TextField fullWidth label="Telefone do Responsável" name="responsavelTelefone" value={formData.responsavelTelefone} onChange={handleInputChange} error={!!errors.responsavelTelefone} helperText={errors.responsavelTelefone} />

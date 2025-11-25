@@ -67,7 +67,6 @@ const CriarConsultaModal: React.FC<Props> = ({ open, onClose, onSuccess }) => {
   }, [errors]);
 
   const handleSave = useCallback(async () => {
-    console.log("HANDLE SAVE CHAMOU");
     // prepare payload
     const payload = {
       ...form,
@@ -77,14 +76,12 @@ const CriarConsultaModal: React.FC<Props> = ({ open, onClose, onSuccess }) => {
     };
 
     const validation = validateCreateConsulta(payload);
-    console.log("VALIDATION:", validation);
     if (!validation.success) {
       setErrors(validation.errors);
       return;
     }
 
     setSalvando(true);
-    console.log("VAI ENVIAR PAYLOAD:", payload);
     try {
       const nova = await createConsulta(validation.data as any);
       onSuccess(nova);

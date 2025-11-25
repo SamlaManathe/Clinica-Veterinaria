@@ -10,7 +10,7 @@ export const statusOptions = [
 export const createConsultaSchema = z.object({
   dataHora: z.string().min(1, "Data e hora são obrigatórias"),
   motivo: z.string().optional(),
-  valor: z.string().optional(),
+  valor: z.number().optional(),
 
   status: z.enum(statusOptions).default("Agendada"),
 

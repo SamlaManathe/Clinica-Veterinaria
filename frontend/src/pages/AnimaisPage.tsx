@@ -115,7 +115,14 @@ const Animais: React.FC = () => {
   const sexos = Array.from(new Set(animais.map((a) => a.sexo).filter(Boolean)));
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" minHeight="100vh" bgcolor="background.default" p={3}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      minHeight="100vh"
+      p={3}
+      sx={{ background: "linear-gradient(135deg, #81C784, #A5D6A7)" }}
+    >
       <Paper
         elevation={3}
         sx={(theme) => ({

@@ -181,8 +181,7 @@ const ConsultasPage: React.FC = () => {
 
     lista.sort(
       (a, b) =>
-        new Date(a.dataHora).getTime() -
-        new Date(b.dataHora).getTime()
+        new Date(a.dataHora).getTime() - new Date(b.dataHora).getTime()
     );
 
     return lista;
@@ -203,6 +202,7 @@ const ConsultasPage: React.FC = () => {
       alignItems="center"
       minHeight="100vh"
       p={3}
+      sx={{ background: "linear-gradient(135deg, #81C784, #A5D6A7)" }}
     >
       <Paper
         elevation={3}
@@ -311,9 +311,7 @@ const ConsultasPage: React.FC = () => {
               <option
                 key={a.id}
                 value={a.id}
-              >{`${a.nome} - ${a.especie || "-"} (Dono: ${
-                a.responsavelNome || "-"
-              })`}</option>
+              >{`${a.nome} - ${a.especie || "-"} (Dono: ${a.responsavelNome || "-"})`}</option>
             ))}
           </TextField>
 

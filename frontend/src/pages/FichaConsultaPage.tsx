@@ -46,7 +46,7 @@ const FichaConsultaPage: React.FC = () => {
 
   if (loading) {
     return (
-      <Box height="100vh" display="flex" alignItems="center" justifyContent="center">
+      <Box height="100vh" display="flex" alignItems="center" justifyContent="center" sx={{ background: "linear-gradient(135deg, #81C784, #A5D6A7)" }}>
         <CircularProgress />
       </Box>
     );
@@ -54,7 +54,7 @@ const FichaConsultaPage: React.FC = () => {
 
   if (!consulta) {
     return (
-      <Box textAlign="center" mt={5}>
+      <Box textAlign="center" mt={5} sx={{ background: "linear-gradient(135deg, #81C784, #A5D6A7)", minHeight: "100vh", p: 3 }}>
         <Typography variant="h6">Consulta não encontrada.</Typography>
         <Button onClick={() => navigate(-1)} sx={{ mt: 2 }} variant="contained">
           Voltar
@@ -67,7 +67,7 @@ const FichaConsultaPage: React.FC = () => {
   const vet = consulta.Veterinario;
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" p={3}>
+    <Box display="flex" flexDirection="column" alignItems="center" p={3} sx={{ background: "linear-gradient(135deg, #81C784, #A5D6A7)", minHeight: "100vh" }}>
       <Paper sx={{ width: "100%", maxWidth: 900, p: 4, borderRadius: 3 }} elevation={4}>
         <Button
           startIcon={<ArrowBackIcon />}

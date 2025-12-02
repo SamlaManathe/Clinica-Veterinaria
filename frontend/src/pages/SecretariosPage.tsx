@@ -86,7 +86,7 @@ const SecretariosPage: React.FC = () => {
   }, [busca, secretarios]);
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" minHeight="100vh" p={3}>
+    <Box display="flex" flexDirection="column" alignItems="center" minHeight="100vh" p={3} sx={{ background: "linear-gradient(135deg, #81C784, #A5D6A7)" }}>
       <Paper elevation={3} sx={{ width: "100%", maxWidth: 1000, p: 3, position: "relative", borderRadius: 2 }}>
         
         <IconButton aria-label="voltar" onClick={() => navigate("/home")} size="small" sx={{ position: "absolute", left: 16, top: 16 }}>

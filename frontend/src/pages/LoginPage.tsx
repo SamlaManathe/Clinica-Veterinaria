@@ -15,6 +15,8 @@ import axios from "axios";
 
 import CriarSecretarioModal from "../components/secretarios/CriarSecretarioModal";
 
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const emailSchema = z.email();
 const passwordSchema = z.string().min(4);
 
@@ -51,7 +53,8 @@ function Login() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const url = "http://localhost:3000/secretarios/login";
+
+    const url = `${API_BASE}/secretarios/login`;
 
     setIsLoading(true);
 

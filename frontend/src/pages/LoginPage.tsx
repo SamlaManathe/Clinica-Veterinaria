@@ -9,7 +9,7 @@ import {
   Alert,
   CircularProgress,
 } from "@mui/material";
-import { Login as LoginIcon } from "@mui/icons-material";
+import PetsIcon from "@mui/icons-material/Pets";
 import { z } from "zod";
 import axios from "axios";
 
@@ -85,11 +85,10 @@ function Login() {
 
   return (
     <>
-      {/* Modal de cadastro */}
       <CriarSecretarioModal
         open={openCadastro}
         onClose={() => setOpenCadastro(false)}
-        onSuccess={(_novoSecretario) => {
+        onSuccess={() => {
           setMsgSucesso("Cadastro realizado com sucesso!");
           setOpenCadastro(false);
         }}
@@ -99,16 +98,30 @@ function Login() {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        minHeight="80vh"
+        minHeight="100vh"
+        sx={{
+          background: "linear-gradient(135deg, #A5D6A7, #81C784)",
+        }}
       >
-        <Paper elevation={2} sx={{ p: 3, width: 320 }}>
+        <Paper
+          elevation={5}
+          sx={{
+            p: 4,
+            width: 360,
+            borderRadius: 4,
+            backgroundColor: "#ffffffee",
+            backdropFilter: "blur(4px)",
+          }}
+        >
           <Box textAlign="center" mb={2}>
-            <LoginIcon sx={{ fontSize: 36, color: "primary.main", mb: 1 }} />
-            <Typography variant="h6" fontWeight={600} mb={1}>
-              Bem-vindo
+            <PetsIcon sx={{ fontSize: 50, color: "#388E3C", mb: 1 }} />
+
+            <Typography variant="h5" fontWeight={700} color="primary.dark">
+              Clínica PetCare
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Faça login para acessar o sistema
+
+            <Typography variant="body2" color="text.secondary" mt={1}>
+              Acesse sua conta
             </Typography>
           </Box>
 
@@ -116,6 +129,7 @@ function Login() {
           {msgErro && <Alert severity="error">{msgErro}</Alert>}
 
           <Box component="form" noValidate onSubmit={handleSubmit}>
+
             <TextField
               label="Email"
               type="email"
@@ -143,15 +157,18 @@ function Login() {
             <Button
               type="submit"
               variant="contained"
-              color="primary"
               fullWidth
-              sx={{ mt: 2 }}
+              sx={{
+                mt: 2,
+                backgroundColor: "#43A047",
+                "&:hover": { backgroundColor: "#2E7D32" },
+              }}
               disabled={!inputsValidos || isLoading}
             >
               {isLoading ? (
                 <Box display="flex" alignItems="center" gap={1}>
                   <CircularProgress size={20} color="inherit" />
-                  Carregando...
+                  Entrando...
                 </Box>
               ) : (
                 "Entrar"
@@ -159,11 +176,13 @@ function Login() {
             </Button>
           </Box>
 
-          {/* Botão para cadastro */}
           <Button
             fullWidth
-            color="secondary"
-            sx={{ mt: 2 }}
+            sx={{
+              mt: 2,
+              color: "#1B5E20",
+              fontWeight: 600,
+            }}
             onClick={() => setOpenCadastro(true)}
           >
             Criar conta

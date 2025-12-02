@@ -28,11 +28,11 @@ Sistema web para gerenciamento de uma clínica veterinária, permitindo controle
 
 | Entidades | Características |
 |--------|-----|
-| **Secretário 👩🏻‍💻** | nome, email, telefone e senha (criptografada com bcrypt) |
-| **Animal 🐶** | nome, raça, espécie, idade, sexo, peso, data de nascimento e observações |
-| **Responsável 👩🏻‍🦱** | nome, telefone e email |
-| **Veterinário 🧑🏻‍⚕️** | nome, telefone, email, crmv, especialidade e descrição |
-| **Consulta 📅** | data, horário, veterinário, animal, status, motivo, valor e anotações |
+| **Secretário 👩🏻‍💻** | Nome, email, telefone e senha (criptografada com bcrypt) |
+| **Animal 🐶** | Nome, raça, espécie, idade, sexo, peso, data de nascimento e observações |
+| **Responsável 👩🏻‍🦱** | Nome, telefone e email |
+| **Veterinário 🧑🏻‍⚕️** | Nome, telefone, email, crmv, especialidade e descrição |
+| **Consulta 📅** | Data, horário, veterinário, animal, status, motivo, valor e anotações |
 
 ---
 
